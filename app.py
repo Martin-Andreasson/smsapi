@@ -12,12 +12,12 @@ CLIENT = session.client("sns")
 def sendsms():
     number = "+" + request.args.get('number')
     print(number)
-    message = 'aaaa'
+    message = 'AAAAAAAAAAAAAAAAAAAAH!'
     print(message)
 
     response = CLIENT.publish(
         PhoneNumber=number,
-        Message='aaaa',
+        Message='AAAAAAAAAAAAAAAAAAAAH!',
         MessageAttributes={
             'AWS.SNS.SMS.SenderID':
             {
