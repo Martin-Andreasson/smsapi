@@ -1,0 +1,5 @@
+###### Requirements without Version Specifiers ######
+boto3
+flask
+awscli
+waitress
