@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flaskapi-deployment
+  name: flaskapi
   labels:
     app: flaskapi
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: flaskapi
-          image: docker.io/lvlartin/sms-api
+          image: docker.io/lvlartin/sms-api:v1.1
           imagePullPolicy: Always
 
           ports:
@@ -35,4 +35,4 @@ spec:
       targetPort: 5000
   selector:
     app: flaskapi
-  type: LoadBalancer
+  type: ClusterIP
