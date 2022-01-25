@@ -17,9 +17,14 @@ spec:
     spec:
       containers:
         - name: flaskapi
-          image: docker.io/lvlartin/sms-api:v1.1
+          env:
+            - name: INFLUX_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: influxtoken
+                  key: INFLUX_TOKEN
+          image: docker.io/lvlartin/sms-api:v1.2
           imagePullPolicy: Always
-
           ports:
             - containerPort: 5000
 
